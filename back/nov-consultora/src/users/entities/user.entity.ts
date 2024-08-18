@@ -12,6 +12,8 @@ constructor(
         public address: string,
          
         public phone: string,
+
+        public tipoUser: string,
          
         public country?: string | undefined,
          

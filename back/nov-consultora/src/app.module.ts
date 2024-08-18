@@ -9,10 +9,11 @@ import { UsersService } from './users/users.service';
 import { ExptesService } from './exptes/exptes.service';
 import { AuthService } from './auth/auth.service';
 import { UsersRepository } from './users/user.repository';
+import { ExpteRepository } from './exptes/expte.repository';
 
 @Module({
   imports: [UsersModule, ExptesModule, AuthModule],
   controllers: [ExptesController, UsersController, AuthController],
-  providers: [UsersService, ExptesService, AuthService, UsersRepository],
+  providers: [UsersService, ExptesService, AuthService, UsersRepository, ExpteRepository],
 })
 export class AppModule {}

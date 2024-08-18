@@ -1,15 +1,15 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { ExptesService } from './exptes.service';
-import { CreateExpteDto } from './dto/create-expte.dto';
-import { UpdateExpteDto } from './dto/update-expte.dto';
+import { Expte } from './entities/expte.entity';
+
 
 @Controller('exptes')
 export class ExptesController {
   constructor(private readonly exptesService: ExptesService) {}
 
   @Post()
-  create(@Body() createExpteDto: CreateExpteDto) {
-    return this.exptesService.create(createExpteDto);
+  create(@Body() createExpte: Expte) {
+    return this.exptesService.create(createExpte);
   }
 
   @Get()
@@ -23,8 +23,8 @@ export class ExptesController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateExpteDto: UpdateExpteDto) {
-    return this.exptesService.update(+id, updateExpteDto);
+  update(@Param('id') id: string, @Body() updateExpte: Expte) {
+    return this.exptesService.update(+id, updateExpte);
   }
 
   @Delete(':id')
